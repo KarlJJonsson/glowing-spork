@@ -1,6 +1,6 @@
-import React from 'react'
-import logo from './logo.png'
-import './Headermenu.css'
+import React from "react";
+import logo from "../assets/logo.png"
+import "../Headermenu.css"
 
 export const Headermenu = () => {
   return (

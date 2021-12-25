@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Signin } from './Signin';
-import Main from './Main';
-import Headermenu from './Headermenu';
+import { Signin } from './components/Signin';
+import Main from './components/Main';
+import Headermenu from './components/Headermenu';
 
 export const App = () => {
   const [authorized, setAuthorized] = useState(false)
