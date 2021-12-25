@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { Signin } from './Signin';
+import Main from './Main';
+import Headermenu from './Headermenu';
 
-function App() {
-  return (
+export const App = () => {
+  const [authorized, setAuthorized] = useState(false);
+
+  const handleLogin = (val) => {
+    setAuthorized(val);
+  }
+
+  if (!authorized){
+    return(
+      <div>
+        <Signin auth={authorized} handleLogin={handleLogin}/>
+      </div>
+    );
+  }
+  else{
+    return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Headermenu/>
+      <div>
+        <button onClick={() => handleLogin(!authorized)}>
+          Logout
+        </button>
+       <Main/>
+      </div>
+      
     </div>
-  );
+    );
+  }
 }
-
 export default App;
