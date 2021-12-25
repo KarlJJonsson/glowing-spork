@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Development process
+When mergin to `main`, create a new pull request with `dev` as origin and `main` as target. Make sure no undesired commits are in the pull request. When all the checks are complete the pull request can be merged with the `main` branch. Perform a fast forward to sync the history
+
+```
+git checkout develop
+git pull
+git merge origin/master
+git push
+```
