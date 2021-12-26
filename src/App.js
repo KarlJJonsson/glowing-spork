@@ -10,9 +10,9 @@ export const App = () => {
     setAuthorized(val)
   }
 
-  if (!authorized) {
-    return (
-      <div>
+  if (!authorized){
+    return(
+      <div class="flex justify-center">
         <Signin auth={authorized} handleLogin={handleLogin}/>
           <a
           class="text-blue-400 hover:text-sky-700 text-bold" 
@@ -23,15 +23,16 @@ export const App = () => {
           Tailwind test
         </a>
       </div>
-    )
-  } else {
-    return (
-      <div className="App">
-        <Headermenu />
-        <div>
-          <button onClick={() => handleLogin(!authorized)}>Logout</button>
-          <Main />
-        </div>
+    );
+  }
+  else{
+    return(
+      <div>
+        <Headermenu/>
+        <button onClick={() => handleLogin(!authorized)}>
+          Logout
+        </button>
+        <Main/>
       </div>
     );
   }
