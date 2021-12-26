@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/glowing-spork/static/css/main.a5ac9547.css",
+    "main.css": "/glowing-spork/static/css/main.7a97d0f3.css",
     "main.js": "/glowing-spork/static/js/main.1388287c.js",
     "static/media/logo.png": "/glowing-spork/static/media/logo.ee37b7bbee77a281b122.png",
     "index.html": "/glowing-spork/index.html",
-    "main.a5ac9547.css.map": "/glowing-spork/static/css/main.a5ac9547.css.map",
+    "main.7a97d0f3.css.map": "/glowing-spork/static/css/main.7a97d0f3.css.map",
     "main.1388287c.js.map": "/glowing-spork/static/js/main.1388287c.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5ac9547.css",
+    "static/css/main.7a97d0f3.css",
     "static/js/main.1388287c.js"
   ]
 }
