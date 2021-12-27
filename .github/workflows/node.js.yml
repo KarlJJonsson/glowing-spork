@@ -33,6 +33,9 @@ jobs:
       
     - name: Check prod dependencies
       run: npm audit --production
+
+    - name: lint with eslint
+      run: npm run lint
       
     - name: build
       run: npm build
