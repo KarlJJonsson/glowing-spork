@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Signin = ({ handleLogin, auth }) => {
+export const Signin = (props) => {
+  const { handleLogin, auth } = props
   return (
     <button
       className="bg-blue-200 hover:bg-blue-300 w-1/6 ml-10 mt-10 rounded-lg shadow h-20"
