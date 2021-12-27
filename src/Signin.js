@@ -1,18 +1,14 @@
-import { Button, Form, Input, Checkbox } from "antd";
+import React from 'react'
+import { Button, Form, Input } from 'antd'
 
 export const Signin = (props) => {
-  // return (
-  //   <div className="flex justify-center mt-2">
-  //     <Button type="primary" onClick={() => props.handleLogin(!props.auth)}>Login</Button>
-  //   </div>
-
   const onFinish = (values) => {
-    console.log('Success:', values);
-  };
+    console.log('Success:', values)
+  }
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+    console.log('Failed:', errorInfo)
+  }
 
   return (
     <div className="flex m-10 justify-center bg-white p-10 shadow rounded">
@@ -48,6 +44,6 @@ export const Signin = (props) => {
         </Form.Item>
       </Form>
     </div>
-  );
+  )
 }
-export default Signin;
+export default Signin
