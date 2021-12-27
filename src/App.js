@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { Signin } from './Signin'
+import { Signin } from './components/Signin'
+import { Button } from 'antd'
 import Main from './components/Main'
 import Headermenu from './components/Headermenu'
 import 'antd/dist/antd.min.css'
@@ -25,8 +26,8 @@ export const App = () => {
         : (
       <div>
         <Headermenu />
-        <button onClick={() => handleLogin(!authorized)}>Logout</button>
         <Main />
+        <Button onClick={() => handleLogin(!authorized)}>Logout</Button>
       </div>
           )
     }
