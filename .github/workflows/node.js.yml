@@ -3,52 +3,34 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
+on: [push, pull_request]
 
 jobs:
-  build:
-
+  check:
+    name: Check
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - name: Checkout repo
-    - uses: actions/checkout@v2
-    
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        
-    - name: dependencies
-      run: npm install
+      - uses: actions/checkout@v2.4.0
+      - name: Use Node 12.13 LTS
+        uses: actions/setup-node@v2.5.0
+        with:
+          node-version: 12.13
+      - name: Install NPM dependencies
+        run: npm install
+      - name: Lint with ESLint
+        run: npm run lint
+      - name: Build
+        run: npm build
       
-    - name: Check prod dependencies
-      run: npm audit --production
-
-    - name: lint with eslint
-      run: npm run lint
-      
-    - name: build
-      run: npm build
-      
-    - name: deploy
-      run: 
-          git config --global user.name $user_name
-          git config --global user.email $user_email
-          git remote set-url origin https://${github_token}@github.com/${repository}
-          npm run deploy
-      env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOYMENT_TOKEN }}
-          repository: ${{ github.repository }}
+    # - name: deploy
+    #   run: 
+    #       git config --global user.name $user_name
+    #       git config --global user.email $user_email
+    #       git remote set-url origin https://${github_token}@github.com/${repository}
+    #       npm run deploy
+    #   env:
+    #       user_name: 'github-actions[bot]'
+    #       user_email: 'github-actions[bot]@users.noreply.github.com'
+    #       github_token: ${{ secrets.ACTIONS_DEPLOYMENT_TOKEN }}
+    #       repository: ${{ github.repository }}
         
