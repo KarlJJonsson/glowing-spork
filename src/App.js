@@ -1,4 +1,3 @@
-import './App.css';
 import { useState } from 'react';
 import { Signin } from './Signin';
 import Main from './Main';
@@ -15,7 +14,7 @@ export const App = () => {
     return(
       <div>
         <Signin auth={authorized} handleLogin={handleLogin}/>
-        <a 
+          <a
           class="text-blue-400 hover:text-sky-700 text-bold" 
           href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
           target="_blank"
@@ -36,7 +35,6 @@ export const App = () => {
         </button>
        <Main/>
       </div>
-      
     </div>
     );
   }
