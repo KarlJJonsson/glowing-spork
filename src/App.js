@@ -4,6 +4,7 @@ import { Signin } from './Signin'
 import Main from './components/Main'
 import Headermenu from './components/Headermenu'
 import 'antd/dist/antd.min.css'
+import anton from './assets/anton.jpg'
 
 export const App = () => {
   const [authorized, setAuthorized] = useState(false)
@@ -27,6 +28,9 @@ export const App = () => {
           >
             Tailwind test
           </a>
+        </div>
+        <div>
+        <img src={anton}/>
         </div>
       </div>
     )
