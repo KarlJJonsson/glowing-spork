@@ -4,6 +4,7 @@ import { Button, Form, Input } from 'antd'
 export const Signin = (props) => {
   const onFinish = (values) => {
     console.log('Success:', values)
+    props.handleLogin(true)
   }
 
   const onFinishFailed = (errorInfo) => {
@@ -11,7 +12,7 @@ export const Signin = (props) => {
   }
 
   return (
-    <div className="flex m-10 justify-center bg-white p-10 shadow rounded">
+    <div className="flex m-10 justify-center bg-white p-10 shadow rounded w-1/4">
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -38,7 +39,7 @@ export const Signin = (props) => {
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" >
             Login
           </Button>
         </Form.Item>
